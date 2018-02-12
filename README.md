@@ -1,10 +1,26 @@
 # workstation
-Scripts for unattended setup of my Linux workstation
+
+Scripts for unattended setup of my Linux workstation.
+
+## Prerequisites
+
+I use 3 main partitions: 2 small ones for side-by-side os installs and one bigger for my profile and work stuff — mounted in non standard `/data` folder.
+
+I wat to be able to switch OSes quicly without loosing my work files AND selected profile settings that can be shared between OSes. 
 
 
-I use 3 main partitions 2 small for side by side os install and one bigger for my profile and work stuff — mounted in non standard `/data` folder.
+## Setup
 
-These scripts help me geting a new OS ready for work quickly:
+These scripts help me geting a new OS install ready for work quickly:
 
-	sudo apt-get install git && git clone https://github.com/wooyek/workstation.git && cd workstation && sudo ./setup.sh
+	sudo apt-get install -y git && git clone https://github.com/wooyek/workstation.git && cd workstation && sudo bash setup.sh
     
+I currently use and tested these with KDE LinuxMint.
+
+## TODO
+
+These require manual settings (help getting them scripted is appreciated):
+
+1. Setup terminal to use nerd fonts
+2. Setup dracula color schem
+3. Setup Papirus iconset

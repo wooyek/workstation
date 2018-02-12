@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-./software.sh
-./folders.sh
-./dev.sh
-./fish_setup.sh
-./fish_setup.fish
+bash software.sh
+bash folders.sh
+bash dev.sh
+bash fish_setup.sh
+bash fish_setup.fish

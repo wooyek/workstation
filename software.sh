@@ -8,27 +8,12 @@ sudo apt install -y keepass2 dropbox git git-flow unzip nano build-essential lib
 echo "127.0.0.1	dev.example.com gandalf.example.com" | sudo tee -a /etc/hosts
 echo "127.0.0.1	t1.example.com t2.example.com t3.example.com t4.example.com t5.example.com" | sudo tee -a /etc/hosts
 
+# KeePass2 plugins 
+# https://github.com/pfn/keepasshttp/
+# http://lechnology.com/software/keeagent/
 
-# Installl PyEnv
-curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-
-
-# Heroku CLI
-# https://devcenter.heroku.com/articles/heroku-cli#debian-ubuntu
-wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
-
-
-# Docker
-# - https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce
-sudo ln -s /data/docker /var/lib/docker
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-source /etc/os-release
-echo $UBUNTU_CODENAME
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $UBUNTU_CODENAME stable"
-sudo apt-get update -y && sudo apt-get install docker-ce -y
-sudo usermod -aG docker $USER
+sudo mkdir /usr/lib/keepass2/plugins
+sudo cp /data/$USER/Pobrane/software/KeePassPlugins/*.plgx /usr/lib/keepass2/plugins/
 
 
 # mkvtoolnix
@@ -37,7 +22,7 @@ sudo usermod -aG docker $USER
 wget -q -O - https://mkvtoolnix.download/gpg-pub-moritzbunkus.txt | sudo apt-key add -
 sudo apt-add-repository 'deb https://mkvtoolnix.download/ubuntu/xenial/ ./'
 sudo apt-add-repository 'deb-src https://mkvtoolnix.download/ubuntu/xenial/ ./'
-sudo apt install mkvtoolnix mkvtoolnix-gui
+sudo apt install -y mkvtoolnix mkvtoolnix-gui
 
 
 # Google Drive
@@ -47,7 +32,7 @@ sudo apt-add-repository 'deb http://shaggytwodope.github.io/repo ./'
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7086E9CC7EC3233B
 sudo apt-key update
 sudo apt-get update
-sudo apt-get install drive
+sudo apt-get install -y drive
 
 
 # Node.js + npm + nvm
@@ -60,5 +45,4 @@ nvm install node
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install yarn
-omf install nvm
+sudo apt-get update && sudo apt-get install -y yarn

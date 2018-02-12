@@ -4,6 +4,7 @@ set -g theme_nerd_fonts yes
 set -g theme_title_use_abbreviated_path no
 omf install bobthefish
 omf theme bobthefish
+omf install nvm
 
 set -Ux WORKON_HOME ~/.local/vens/
 set -Ux PIPENV_SHELL_FANCY True

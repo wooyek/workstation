@@ -15,7 +15,7 @@ wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
 # Docker
 # - https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-docker-ce
 sudo ln -s /data/docker /var/lib/docker
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+sudo apt-get install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 source /etc/os-release
@@ -48,10 +48,10 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 aspell --lang pl dump master | aspell --lang pl expand | tr ' ' '\n' | sudo tee /usr/share/dictionaries-common/polish.dic
 
 # Pycharm
+mkdir -p /data/opt/
 cd ~ 
 ln -s /data/$USER/.PyCharm2017.3/
 ln -s /data/$USER/.WebStorm2017.3/
-mkdir -p /data/opt/
 tar -xzf ~/Pobrane/software/pycharm-professional-2017.3.2.tar.gz -C /data/opt/
 tar -xzf ~/Pobrane/software/WebStorm-2017.2.tar.gz -C /data/opt/
 # This is neded to start fish shell from PyCharm
