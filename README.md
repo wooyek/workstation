@@ -6,4 +6,5 @@ I use 3 main partitions 2 small for side by side os install and one bigger for m
 
 These scripts help me geting a new OS ready for work quickly:
 
-    sudo ./setup.sh
+	sudo apt-get install git && git clone https://github.com/wooyek/workstation.git && cd workstation && sudo ./setup.sh
+    
