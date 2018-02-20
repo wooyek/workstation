@@ -54,7 +54,9 @@ sudo apt-get update && sudo apt-get install -y yarn
 mkdir -p /data/$USER/Pobrane/software
 sudo gdebi /data/$USER/Pobrane/software/bcompare-4.2.3.22587_amd64.deb
 sudo gdebi /data/$USER/Pobrane/software/atom-amd64.deb
-sudo gdebi code_1.16.0-1504714880_amd64.deb
-sudo gdebi gitbook-editor-7.0.12-linux-x64.deb
-sudo gdebi google-chrome-stable_current_amd64.deb
-sudo gdebi skypeforlinux-64.deb
+sudo gdebi /data/$USER/Pobrane/software/code_1.16.0-1504714880_amd64.deb
+sudo gdebi /data/$USER/Pobrane/software/gitbook-editor-7.0.12-linux-x64.deb
+sudo gdebi /data/$USER/Pobrane/software/google-chrome-stable_current_amd64.deb
+sudo gdebi /data/$USER/Pobrane/software/skypeforlinux-64.deb
+sudo gdebi /data/$USER/Pobrane/software/vagrant_2.0.1_x86_64.deb
+sudo gdebi /data/$USER/Pobrane/software/virtualbox-5.1_5.1.28-117968-Ubuntu-xenial_amd64.deb
