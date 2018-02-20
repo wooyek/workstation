@@ -13,7 +13,7 @@ I wat to be able to switch OSes quicly without loosing my work files AND selecte
 
 These scripts help me geting a new OS install ready for work quickly:
 
-	sudo apt-get install -y git && git clone https://github.com/wooyek/workstation.git && cd workstation && sudo bash setup.sh
+	curl -L https://raw.githubusercontent.com/wooyek/workstation/master/get.sh | bash
     
 I currently use and tested these with KDE LinuxMint.
 
