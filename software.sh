@@ -3,7 +3,12 @@
 sudo apt-get update 
 sudo apt-get upgrade -y
 
-sudo apt install -y keepass2 dropbox git git-flow unzip nano build-essential libffi-dev python-dev python-pip python-virtualenv python3 python3-dev python3-pip python3-venv spatialite-bin libsqlite3-mod-spatialite libproj-dev libfreexl-dev libgdal-dev gdal-bin mono-complete software-properties-common aspell-pl ruby-compass libpq-dev chromium-chromedriver xvfb sublime-text gparted shutter banshee default-jre handbrake shutter libgoo-canvas-perl nfs-common inkscape python-gpgme pinta calibre graphviz fish make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev screenfetch pandoc mercurial snapd krusader spotify-client baobab vlc vlc-plugin-samba tortoisehg spotify-client gdebi-core
+sudo apt install -y keepass2 mono-complete dropbox sublime-text gparted shutter banshee inkscape pinta calibre  krusader spotify-client baobab vlc vlc-plugin-samba tortoisehg 
+sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
+sudo apt install -y fish git git-flow unzip nano build-essential libffi-dev python-dev python-pip python-virtualenv python3 python3-dev python3-pip python3-venv 
+sudo apt install -y spatialite-bin libsqlite3-mod-spatialite libproj-dev libfreexl-dev libgdal-dev gdal-bin software-properties-common aspell-pl ruby-compass libpq-dev 
+sudo apt install -y chromium-chromedriver xvfb default-jre handbrake shutter libgoo-canvas-perl nfs-common python-gpgme graphviz fish screenfetch pandoc mercurial gdebi-core
+#sudo apt install -y tortoisehq
 
 echo "127.0.0.1	dev.example.com gandalf.example.com" | sudo tee -a /etc/hosts
 echo "127.0.0.1	t1.example.com t2.example.com t3.example.com t4.example.com t5.example.com" | sudo tee -a /etc/hosts
