@@ -5,8 +5,14 @@
 # sudo mkdir -p /data && sudo chown $USER:users /data
 # sudo apt install gnome-disk-utility
 
-echo "»»» Replacing home folders"
+echo "»»» Replacing home folders with links to /data couterparts"
+sudo mkdir -p /data/work 
+sudo chown $USER:users /data
 cd ~ 
+
+# Make sure target folder exists exists
+xargs mkdir -p <folders.txt
+
 ln -s /data/
 ln -s /data/work
 ln -s /data/dropbox/ ~/Dropbox
@@ -26,6 +32,7 @@ ln -s /data/$USER/.config/fish/completions .config/fish/completions
 ln -s /data/$USER/.cache/spotify .cache/spotify
 ln -s /data/$USER/.cache/pip .cache/pip
 ln -s /data/$USER/.cache/pipenv .cache/pipenv
+# TODO: Make these language independent
 rm -r ~/Pobrane/ 
 rm -r ~/Dokumenty/
 rm -r ~/Wideo/
@@ -33,3 +40,4 @@ ln -s /data/$USER/Pobrane/
 ln -s /data/$USER/Dokumenty/
 ln -s /data/$USER/Obrazy/
 ln -s /data/$USER/Pulpit/
+
