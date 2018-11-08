@@ -6,9 +6,10 @@ omf install bobthefish
 omf theme bobthefish
 omf install nvm
 
-set -Ux WORKON_HOME ~/.local/vens/
+set -Ux WORKON_HOME /data/vens/
 set -Ux PIPENV_SHELL_FANCY True
-echo "export WORKON_HOME:$HOME/.local/venvs/" > $HOME/.config/plasma-workspace/env/workon_home.sh
+# This is required for KDE aplications to see these variables
+# echo "export WORKON_HOME=/data/venvs/" > $HOME/.config/plasma-workspace/env/workon_home.sh
 
 
 # Fish Shell completitions
@@ -26,3 +27,5 @@ echo complete --command pipenv --arguments \"\(env _PIPENV_COMPLETE=complete-fis
 # Put these in ~/.config/fish/config.fish
 set -x PATH "/home/$USER/.pyenv/bin" $PATH
 status --is-interactive; and source (pyenv init -|psub)
+
+pip completion --fish > ~/.config/fish/completions/pip.fish

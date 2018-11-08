@@ -28,11 +28,17 @@ sudo pip3 install wheel pip setuptools -U
 sudo pip2 install wheel pip setuptools virtualenv  -U
 curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python3
 pipsi install legit 
-pipsi install pew
-pipsi install pipenv
-pipsi install invoke
 pipsi install bump2version
+pipsi install detox
+pipsi install flake8
+pipsi install invoke
+pipsi install isort
+pipsi install pew
+pipsi install piptools
+pipsi install pipenv
 pipsi install tox
+pipsi install transifex-client
+pipsi install vex
 
 
 # Bash completitions
