@@ -30,11 +30,17 @@ sudo pip3 install wheel pip setuptools -U
 sudo pip2 install wheel pip setuptools virtualenv  -U
 curl https://raw.githubusercontent.com/mitsuhiko/pipsi/master/get-pipsi.py | python3
 pipsi install legit 
-pipsi install pew
-pipsi install pipenv
-pipsi install invoke
 pipsi install bump2version
+pipsi install detox
+pipsi install flake8
+pipsi install invoke
+pipsi install isort
+pipsi install pew
+pipsi install piptools
+pipsi install pipenv
 pipsi install tox
+pipsi install transifex-client
+pipsi install vex
 
 
 # Bash completitions
@@ -50,9 +56,12 @@ aspell --lang pl dump master | aspell --lang pl expand | tr ' ' '\n' | sudo tee 
 # Pycharm
 mkdir -p /data/opt/
 cd ~ 
+mkdir -p /data/$USER/.PyCharm2017.3/
+mkdir -p /data/$USER/.WebStorm2017.3/
+mkdir -p /data/$USER/Pobrane/software
 ln -s /data/$USER/.PyCharm2017.3/
 ln -s /data/$USER/.WebStorm2017.3/
-tar -xzf ~/Pobrane/software/pycharm-professional-2017.3.2.tar.gz -C /data/opt/
-tar -xzf ~/Pobrane/software/WebStorm-2017.2.tar.gz -C /data/opt/
+#sudo tar -xzf ~/Pobrane/software/pycharm-professional-2017.3.2.tar.gz -C /data/opt/
+#sudo tar -xzf ~/Pobrane/software/WebStorm-2017.2.tar.gz -C /data/opt/
 # This is neded to start fish shell from PyCharm
-sudo ln -s ~/.config/fish/fishd.hagrid /data/opt/pycharm-2017.3.2/plugins/terminal/fish/fishd.hagrid
+ln -s ~/.config/fish/fishd.$(hostname) /data/opt/pycharm-2017.3.2/plugins/terminal/fish/fishd.$(hostname)

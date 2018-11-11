@@ -10,5 +10,5 @@ sudo apt-get update -y && sudo apt-get install fish -y
 
 echo "Changing defautl shell, re-login to conitunue"
 chsh -s $(which fish)
-
+fish fish_setup.fish
 
