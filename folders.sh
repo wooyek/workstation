@@ -42,3 +42,4 @@ ln -s /data/$USER/Pobrane/
 ln -s /data/$USER/Dokumenty/
 ln -s /data/$USER/Obrazy/
 ln -s /data/$USER/Pulpit/
+

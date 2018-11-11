@@ -53,6 +53,7 @@ curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv
 # IDE spellchecker dictionaries
 aspell --lang pl dump master | aspell --lang pl expand | tr ' ' '\n' | sudo tee /usr/share/dictionaries-common/polish.dic
 
+
 # Pycharm
 mkdir -p /data/opt/
 cd ~ 
@@ -61,6 +62,7 @@ mkdir -p /data/$USER/.WebStorm2017.3/
 mkdir -p /data/$USER/Pobrane/software
 ln -s /data/$USER/.PyCharm2017.3/
 ln -s /data/$USER/.WebStorm2017.3/
+
 #sudo tar -xzf ~/Pobrane/software/pycharm-professional-2017.3.2.tar.gz -C /data/opt/
 #sudo tar -xzf ~/Pobrane/software/WebStorm-2017.2.tar.gz -C /data/opt/
 # This is neded to start fish shell from PyCharm

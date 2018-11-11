@@ -54,6 +54,10 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt-get update && sudo apt-get install -y yarn
 
+
+# echo "»»» Syncing software instals from main workstation"
+# rsync -e ssh -vzrPp janusz@hagrid.local:/data/$USER/Pobrane/software /data/$USER/Pobrane/software
+
 mkdir -p /data/$USER/Pobrane/software
 sudo gdebi /data/$USER/Pobrane/software/bcompare-4.2.3.22587_amd64.deb
 sudo gdebi /data/$USER/Pobrane/software/atom-amd64.deb
