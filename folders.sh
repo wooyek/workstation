@@ -8,10 +8,11 @@
 echo "»»» Replacing home folders with links to /data couterparts"
 sudo mkdir -p /data/work 
 sudo chown $USER:users /data
-cd ~ 
 
 # Make sure target folder exists exists
 xargs mkdir -p <folders.txt
+
+cd ~ 
 
 
 ln -s /data/
