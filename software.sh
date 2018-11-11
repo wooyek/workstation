@@ -8,7 +8,7 @@ sudo apt install -y make build-essential libssl-dev zlib1g-dev libbz2-dev librea
 sudo apt install -y fish git git-flow unzip nano build-essential libffi-dev python-dev python-pip python-virtualenv python3 python3-dev python3-pip python3-venv 
 sudo apt install -y spatialite-bin libsqlite3-mod-spatialite libproj-dev libfreexl-dev libgdal-dev gdal-bin software-properties-common aspell-pl ruby-compass libpq-dev 
 sudo apt install -y chromium-chromedriver xvfb default-jre handbrake shutter libgoo-canvas-perl nfs-common python-gpgme graphviz fish screenfetch pandoc mercurial gdebi-core
-sudo apt install -y sudo apt-get install samba kdenetwork-filesharing
+sudo apt install -y sudo apt-get install samba kdenetwork-filesharing openssh-server
 #sudo apt install -y tortoisehq
 
 echo "127.0.0.1	dev.example.com gandalf.example.com" | sudo tee -a /etc/hosts
