@@ -39,8 +39,11 @@ ln -s /data/$USER/.cache/pipenv .cache/pipenv
 rm -r ~/Pobrane/ 
 rm -r ~/Dokumenty/
 rm -r ~/Wideo/
-ln -s /data/$USER/Pobrane/ 
-ln -s /data/$USER/Dokumenty/
-ln -s /data/$USER/Obrazy/
-ln -s /data/$USER/Pulpit/
+#rm -r ~/Download/ 
+#rm -r ~/Documents/
+rm -r ~/Wideo/
+#ln -s /data/$USER/Pobrane/ 
+#ln -s /data/$USER/Dokumenty/
+#ln -s /data/$USER/Obrazy/
+#ln -s /data/$USER/Pulpit/ Desktop
 
