@@ -14,6 +14,7 @@ xargs mkdir -p <folders.txt
 
 cd ~ 
 
+
 ln -s /data/
 ln -s /data/work
 ln -s /data/dropbox/ ~/Dropbox

@@ -3,7 +3,6 @@
 sudo apt-get update 
 sudo apt-get upgrade -y
 
-
 sudo apt install -ymf keepass2 mono-complete sublime-text gparted shutter banshee inkscape pinta calibre krusader baobab vlc vlc-plugin-samba 
 sudo apt install -ymf make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 sudo apt install -ymf fish git git-flow unzip nano build-essential libffi-dev python-dev python-pip python-virtualenv python3 python3-dev python3-pip python3-venv 
