@@ -57,13 +57,18 @@ aspell --lang pl dump master | aspell --lang pl expand | tr ' ' '\n' | sudo tee 
 # Pycharm
 mkdir -p /data/opt/
 cd ~ 
-mkdir -p /data/$USER/.PyCharm2017.3/
-mkdir -p /data/$USER/.WebStorm2017.3/
+mkdir -p /data/$USER/.PyCharm2018.5/
+#mkdir -p /data/$USER/.WebStorm2017.3/
 mkdir -p /data/$USER/Pobrane/software
-ln -s /data/$USER/.PyCharm2017.3/
-ln -s /data/$USER/.WebStorm2017.3/
+ln -s /data/$USER/.PyCharm2018.5/
+#ln -s /data/$USER/.WebStorm2017.3/
 
-#sudo tar -xzf ~/Pobrane/software/pycharm-professional-2017.3.2.tar.gz -C /data/opt/
+sudo tar -xzf ~/Pobrane/software/pycharm-professional-2018.2.5.tar.gz -C /data/opt/
 #sudo tar -xzf ~/Pobrane/software/WebStorm-2017.2.tar.gz -C /data/opt/
 # This is neded to start fish shell from PyCharm
 ln -s ~/.config/fish/fishd.$(hostname) /data/opt/pycharm-2017.3.2/plugins/terminal/fish/fishd.$(hostname)
+
+# https://askubuntu.com/questions/946827/java-jre-8-install
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
