@@ -1,0 +1,12 @@
+legit
+bump2version
+detox
+flake8
+invoke
+isort
+pew
+piptools
+pipenv
+tox
+transifex-client
+vex

@@ -28,6 +28,7 @@ ln -s /data/$USER/.bash_aliases
 ln -s /data/$USER/.cookiecutterrc
 ln -s /data/$USER/.vagrant.d
 ln -s /data/$USER/.ssh
+ln -s /data/$USER/.tox
 #ln -s /data/$USER/.local/share .local/share
 ln -s /data/$USER/.local/share/fonts .local/share/fonts
 ln -s /data/$USER/.config/fish/completions .config/fish/completions
@@ -42,8 +43,7 @@ rm -r ~/Wideo/
 #rm -r ~/Download/ 
 #rm -r ~/Documents/
 rm -r ~/Wideo/
-#ln -s /data/$USER/Pobrane/ 
+ln -s /data/$USER/Pobrane/ 
 #ln -s /data/$USER/Dokumenty/
 #ln -s /data/$USER/Obrazy/
 #ln -s /data/$USER/Pulpit/ Desktop
-
