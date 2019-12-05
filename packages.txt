@@ -42,6 +42,7 @@ make build-essential
 mercurial
 mono-complete
 nano
+network-manager-openvpn
 nfs-common
 openssh-server
 pandoc
@@ -72,3 +73,11 @@ wget
 xvfb
 xz-utils
 zlib1g-dev
+
+
+apt-transport-https
+ca-certificates
+curl
+gnupg-agent
+software-properties-common
+
