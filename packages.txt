@@ -18,6 +18,7 @@ graphviz
 gvfs-bin
 handbrake
 inkscape
+inxi
 kdenetwork-filesharing
 keepass2
 krusader
@@ -65,6 +66,7 @@ software-properties-common
 spatialite-bin
 sublime-text
 tk-dev
+tree
 unzip
 vlc
 vlc-plugin-samba
@@ -72,3 +74,8 @@ wget
 xvfb
 xz-utils
 zlib1g-dev
+libxml2-dev 
+libxmlsec1-dev 
+libxmlsec1-openssl
+
+network-manager-openvpn

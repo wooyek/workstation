@@ -4,6 +4,8 @@ set -g theme_nerd_fonts yes
 set -g theme_title_use_abbreviated_path no
 omf install bobthefish
 omf theme bobthefish
+
+set -Ux NVM_DIR /data/$USER/.nvm
 omf install nvm
 
 set -Ux WORKON_HOME /data/vens/
@@ -29,3 +31,8 @@ set -x PATH "/home/$USER/.pyenv/bin" $PATH
 status --is-interactive; and source (pyenv init -|psub)
 
 pip completion --fish > ~/.config/fish/completions/pip.fish
+
+
+# https://github.com/nvm-sh/nvm#important-notes
+omf install https://github.com/FabioAntunes/fish-nvm
+omf install https://github.com/edc/bass
