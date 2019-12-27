@@ -2,7 +2,7 @@
 
 echo "----> PyCharm"
 
-PYCHARM_VERSION=2018.5
+PYCHARM_VERSION=2019.3
 
 mkdir -p /data/opt/
 cd ~
@@ -13,5 +13,5 @@ ln -s /data/$USER/.PyCharmPYCHARM_VERSION/
 sudo tar -xzf ~/Pobrane/software/pycharm-professional-$PYCHARM_VERSION.tar.gz -C /data/opt/
 
 echo "----> PyCharm FISH integration"
-ln -s ~/.config/fish/fishd.$(hostname) /data/opt/pycharm-$PYCHARM_VERSION/plugins/terminal/fish/fishd.$(hostname)
+sudo ln -s ~/.config/fish/fishd.$(hostname) /data/opt/pycharm-$PYCHARM_VERSION/plugins/terminal/fish/fishd.$(hostname)
 
