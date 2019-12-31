@@ -17,6 +17,12 @@ These scripts help me geting a new OS install ready for work quickly:
     
 I currently use and tested these with KDE LinuxMint.
 
+
+## No spash screen on boot
+
+Replace `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` with `GRUB_CMDLINE_LINUX_DEFAULT="quiet"` in `/etc/default/grub` then run `sudo update-grub`.
+
+
 ## TODO
 
 These require manual settings (help getting them scripted is appreciated):
@@ -24,3 +30,4 @@ These require manual settings (help getting them scripted is appreciated):
 1. Setup terminal to use [Sauce Code Pro Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf)
 2. Setup [Dracula color scheme](https://store.kde.org/p/1001521)
 3. Setup Papirus iconset
+

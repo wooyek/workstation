@@ -1,12 +1,13 @@
-legit
 bump2version
-detox
+cookiecutter
 flake8
 invoke
 isort
+legit
 pew
-piptools
+pip-tools
 pipenv
 tox
 transifex-client
 vex
+twine
