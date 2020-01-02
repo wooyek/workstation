@@ -68,6 +68,7 @@ sublime-text
 tk-dev
 tree
 unzip
+vim
 vlc
 vlc-plugin-samba
 wget
