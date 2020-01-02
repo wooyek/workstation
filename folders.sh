@@ -15,8 +15,7 @@ xargs mkdir -p <folders.txt
 cd ~ 
 
 ln -s /data/$USER/.bash_aliases 
-mkdir -p /home/$USER/.config/fish/
-ln -s /data/$USER/.config/fish/completions .config/fish/completions
+ln -s /data/$USER/.config/fish /home/$USER/.config/
 mkdir -p /home/$USER/.config/plasma-workspace/
 ln -s /data/$USER/.config/plasma-workspace/env .config/plasma-workspace/env
 ln -s /data/$USER/.cache/spotify .cache/spotify

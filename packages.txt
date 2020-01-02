@@ -43,6 +43,7 @@ make build-essential
 mercurial
 mono-complete
 nano
+network-manager-openvpn
 nfs-common
 openssh-server
 pandoc
@@ -80,3 +81,9 @@ libxmlsec1-dev
 libxmlsec1-openssl
 
 network-manager-openvpn
+apt-transport-https
+ca-certificates
+curl
+gnupg-agent
+software-properties-common
+libjpeg62
