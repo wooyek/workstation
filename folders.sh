@@ -18,7 +18,8 @@ ln -s /data/$USER/.bash_aliases
 ln -s /data/$USER/.config/fish /home/$USER/.config/
 mkdir -p /home/$USER/.config/plasma-workspace/
 ln -s /data/$USER/.config/plasma-workspace/env .config/plasma-workspace/env
-ln -s /data/$USER/.cache/spotify .cache/spotify
+ln -s /data/$USER/.config/google-chrome .config/
+ln -s /data/$USER/.cache/spotify .cache/
 ln -s /data/$USER/.cache/pip .cache/pip
 ln -s /data/$USER/.cache/pipenv .cache/pipenv
 ln -s /data/$USER/.cookiecutterrc
@@ -36,7 +37,7 @@ ln -s /data/$USER/.ssh
 ln -s /data/$USER/.tox
 
 ln -s /data/dropbox/ ~/Dropbox
-ln -s /data/$USER/.PyCharm2019.1/
+ln -s /data/$USER/.PyCharm2019.3/
 # ln -s /data/$USER/.WebStorm2018.3/
 
 # TODO: Make these language independent
