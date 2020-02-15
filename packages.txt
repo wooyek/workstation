@@ -25,6 +25,7 @@ inkscape
 inxi
 kdenetwork-filesharing
 keepass2
+kdenlive
 krusader
 libbz2-dev
 libffi-dev
