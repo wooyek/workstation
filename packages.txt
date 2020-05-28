@@ -10,6 +10,7 @@ chromium-chromedriver
 curl
 curl
 default-jre
+figlet
 fish
 gdal-bin
 gdebi-core
