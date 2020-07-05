@@ -44,17 +44,16 @@ ln -s /data/dropbox/ ~/Dropbox
 
 # TODO: Make these language independent
 
-rm -r ~/Desktop
-ln -s /data/$USER/Desktop/ 
+rm -r ~/Pulpit
+ln -s /data/$USER/Pulpit/ 
 
-rm -r ~/Downloads
-ln -s /data/$USER/Pobrane/ Downloads
+rm -r ~/Pobrane
+ln -s /data/$USER/Pobrane/ Pobrane
 
-rm -r ~/Documents 
-ln -s /data/$USER/Dokumenty/ Documents
+rm -r ~/Dokumenty 
+ln -s /data/$USER/Dokumenty/ Dokumenty
 
-#rm -r ~/Documents/
-# rm -r ~/Wideo/
-#ln -s /data/$USER/Dokumenty/
-#ln -s /data/$USER/Obrazy/
-#ln -s /data/$USER/Pulpit/ Desktop
+rm -r ~/Obrazy 
+ln -s /data/$USER/Obrazy/ Obrazy
+
+

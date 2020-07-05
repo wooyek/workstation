@@ -2,6 +2,6 @@
 
 mkdir -p $PACKAGES_SOURCE
 for i in components/*.sh; do
-    echo "»»»» Installing $i"
+    echo "»»»» Installing $i" | boxes -d ada-box
     bash $i
 done
