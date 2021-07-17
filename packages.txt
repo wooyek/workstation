@@ -86,3 +86,5 @@ wget
 xvfb
 xz-utils
 zlib1g-dev
+graphviz 
+libgraphviz-dev

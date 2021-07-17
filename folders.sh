@@ -32,6 +32,7 @@ ln -s /data/$USER/.gitconfig
 ln -s /data/$USER/.gitignore 
 ln -s /data/$USER/.hgrc
 ln -s /data/$USER/.local/share/fonts .local/share/fonts
+ln -s /data/$USER/.local/share/Steam /home/$USER/.local/share/Steam
 ln -s /data/$USER/.npm
 ln -s /data/$USER/.nvm
 ln -s /data/$USER/.pyenv
