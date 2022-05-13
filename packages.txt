@@ -1,5 +1,6 @@
 apt-transport-https
 ark
+awscli
 aspell-pl
 banshee
 baobab
@@ -27,6 +28,7 @@ inxi
 kdenetwork-filesharing
 keepass2
 kdenlive
+ksnip
 krusader
 libbz2-dev
 libffi-dev
@@ -54,6 +56,7 @@ mercurial
 mono-complete
 nano
 network-manager-openvpn
+net-tools
 nfs-common
 openssh-server
 pandoc

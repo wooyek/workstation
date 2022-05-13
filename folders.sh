@@ -37,7 +37,6 @@ ln -s /data/$USER/.nvm
 ln -s /data/$USER/.pyenv
 ln -s /data/$USER/.pypirc 
 ln -s /data/$USER/.ssh
-ln -s /data/$USER/.tox
 ln -s /data/$USER/.tox /home/$USER/.tox
 ln -s /data/$USER/.vagrant.d
 ln -s /data/dropbox/ ~/Dropbox
@@ -45,16 +44,17 @@ ln -s /data/dropbox/ ~/Dropbox
 # TODO: Make these language independent
 
 rm -r ~/Desktop
-ln -s /data/$USER/Desktop/ 
+ln -s /data/$USER/Pulpit Desktop
 
 rm -r ~/Downloads
-ln -s /data/$USER/Pobrane/ Downloads
+ln -s /data/$USER/Pobrane Downloads
 
 rm -r ~/Documents 
-ln -s /data/$USER/Dokumenty/ Documents
+ln -s /data/$USER/Dokumenty Documents
 
-#rm -r ~/Documents/
-# rm -r ~/Wideo/
-#ln -s /data/$USER/Dokumenty/
-#ln -s /data/$USER/Obrazy/
-#ln -s /data/$USER/Pulpit/ Desktop
+rm -r ~/Pictures 
+ln -s /data/$USER/Obrazy Pictures
+
+rm -r ~/Videos 
+ln -s /data/$USER/Wideo Videos
+

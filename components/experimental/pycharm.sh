@@ -14,4 +14,3 @@ sudo tar -xzf ~/Pobrane/software/pycharm-professional-$PYCHARM_VERSION.tar.gz -C
 
 echo "----> PyCharm FISH integration"
 sudo ln -s ~/.config/fish/fishd.$(hostname) /data/opt/pycharm-$PYCHARM_VERSION/plugins/terminal/fish/fishd.$(hostname)
-

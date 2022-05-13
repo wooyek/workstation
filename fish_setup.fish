@@ -27,7 +27,10 @@ echo complete --command pipenv --arguments \"\(env _PIPENV_COMPLETE=complete-fis
 # To see current PyEnv help run
 # pyenv init
 # Put these in ~/.config/fish/config.fish
-set -x PATH "/home/$USER/.pyenv/bin" $PATH
+# set -x PATH "/home/$USER/.pyenv/bin" $PATH
+
+set -Ux fish_user_paths /home/$USER/.pyenv/bin $fish_user_paths
+
 status --is-interactive; and source (pyenv init -|psub)
 
 pip completion --fish > ~/.config/fish/completions/pip.fish
