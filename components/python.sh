@@ -3,10 +3,10 @@
 
 echo "----> Updating PIP"
 sudo pip3 install wheel pip setuptools -U
-sudo pip2 install wheel pip setuptools virtualenv  -U
+#sudo pip2 install wheel pip setuptools virtualenv  -U
 
-echo "----> Installing Bash completitions"
-curl https://raw.githubusercontent.com/pyinvoke/invoke/master/completion/bash -o /etc/bash_completion.d/
+# echo "----> Installing Bash completitions"
+# curl https://raw.githubusercontent.com/pyinvoke/invoke/master/completion/bash -o /etc/bash_completion.d/
 
 echo "----> Installl PyEnv"
 curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
