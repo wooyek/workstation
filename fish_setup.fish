@@ -8,8 +8,8 @@ omf theme bobthefish
 set -Ux NVM_DIR /data/$USER/.nvm
 omf install nvm
 
-set -Ux WORKON_HOME /data/vens/
-set -Ux PIPENV_SHELL_FANCY True
+# set -Ux WORKON_HOME /data/vens/
+# set -Ux PIPENV_SHELL_FANCY True
 # This is required for KDE aplications to see these variables
 # echo "export WORKON_HOME=/data/venvs/" > $HOME/.config/plasma-workspace/env/workon_home.sh
 
@@ -26,14 +26,22 @@ echo complete --command pipenv --arguments \"\(env _PIPENV_COMPLETE=complete-fis
 
 # To see current PyEnv help run
 # pyenv init
+# https://github.com/pyenv/pyenv#basic-github-checkout
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+
 # Put these in ~/.config/fish/config.fish
+# status is-login; and pyenv init --path | source
+# status is-interactive; and pyenv init - | source
+
 # set -x PATH "/home/$USER/.pyenv/bin" $PATH
 
-set -Ux fish_user_paths /home/$USER/.pyenv/bin $fish_user_paths
+# set -Ux fish_user_paths /home/$USER/.pyenv/bin $fish_user_paths
 
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 
-pip completion --fish > ~/.config/fish/completions/pip.fish
+# https://pip.pypa.io/en/stable/user_guide/#command-completion
+python -m pip completion --fish > ~/.config/fish/completions/pip.fish
 
 
 # https://github.com/nvm-sh/nvm#important-notes

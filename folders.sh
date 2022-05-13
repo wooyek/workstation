@@ -32,11 +32,13 @@ ln -s /data/$USER/.gitconfig
 ln -s /data/$USER/.gitignore 
 ln -s /data/$USER/.hgrc
 ln -s /data/$USER/.local/share/fonts .local/share/fonts
+ln -s /data/$USER/.local/share/Steam /home/$USER/.local/share/Steam
 ln -s /data/$USER/.npm
 ln -s /data/$USER/.nvm
 ln -s /data/$USER/.pyenv
 ln -s /data/$USER/.pypirc 
 ln -s /data/$USER/.ssh
+ln -s /data/$USER/.tox
 ln -s /data/$USER/.tox /home/$USER/.tox
 ln -s /data/$USER/.vagrant.d
 ln -s /data/dropbox/ ~/Dropbox
