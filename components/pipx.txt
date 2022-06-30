@@ -1,5 +1,9 @@
+asciinema
+autoflake
+black
 bump2version
 cookiecutter
+check-manifest
 flake8
 invoke
 isort
@@ -7,7 +11,10 @@ legit
 pew
 pip-tools
 pipenv
+poetry
 tox
 transifex-client
 vex
 twine
+watchdog[watchmedo]
+tabulate

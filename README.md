@@ -30,4 +30,5 @@ These require manual settings (help getting them scripted is appreciated):
 1. Setup terminal to use [Sauce Code Pro Nerd Font Complete Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf)
 2. Setup [Dracula color scheme](https://store.kde.org/p/1001521)
 3. Setup Papirus iconset
-
+4. Disapble quiet spash during boot
+https://askubuntu.com/questions/33416/how-do-i-disable-the-boot-splash-screen-and-only-show-kernel-and-boot-text-inst
