@@ -13,7 +13,7 @@ python3 -m pipx ensurepath
 
 echo "----> Installing from pipx.txt"
 while read package; do
-    echo "**** Installing $package with PIPSX"
+    echo "**** Installing $package with PIPX"
     # ~/.local/bin/pipx uninstall "$package"
     ~/.local/bin/pipx install --force "$package"
 done <components/pipx.txt

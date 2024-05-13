@@ -18,3 +18,5 @@ vex
 twine
 watchdog[watchmedo]
 tabulate
+pre-commit
+mypy

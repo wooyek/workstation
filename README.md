@@ -20,7 +20,7 @@ I currently use and tested these with KDE LinuxMint.
 
 ## No spash screen on boot
 
-Replace `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` with `GRUB_CMDLINE_LINUX_DEFAULT="quiet"` in `/etc/default/grub` then run `sudo update-grub`.
+Replace `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"` with `GRUB_CMDLINE_LINUX_DEFAULT=""` in `/etc/default/grub` then run `sudo update-grub`.
 
 
 ## TODO
