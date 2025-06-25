@@ -1,7 +1,8 @@
 #!/usr/bin/env fish
+# https://asdf-vm.com/guide/getting-started.html#official-download
 
 # https://asdf-vm.com/guide/getting-started.html#_3-install-asdf
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 
 # http://asdf-vm.com/guide/getting-started.html#_3-install-asdf
 source ~/.asdf/asdf.fish

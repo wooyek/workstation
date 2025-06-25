@@ -2,7 +2,7 @@
 # Python
 
 echo "----> Updating PIP"
-sudo pip3 install wheel pip setuptools -U
+#sudo pip3 install wheel pip setuptools -U
 #sudo pip2 install wheel pip setuptools virtualenv  -U
 
 # echo "----> Installing Bash completitions"

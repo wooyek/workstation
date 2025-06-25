@@ -29,7 +29,7 @@ omf install nvm
 # These will somtimes requires to install the actual commend like pyenv
 
 mkdir -p ~/.config/fish/completions/
-curl https://raw.githubusercontent.com/pyinvoke/invoke/master/completion/fish -o ~/.config/fish/completions/pyinvoke
+# curl https://raw.githubusercontent.com/pyinvoke/invoke/master/completion/fish -o ~/.config/fish/completions/pyinvoke
 # https://github.com/pypa/pipenv#shell-completion
 # This does not work
 # echo "eval (pipenv --completion)" > ~/.config/fish/completions/pipenv.fish

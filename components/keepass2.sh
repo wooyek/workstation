@@ -3,7 +3,7 @@
 # http://lechnology.com/software/keeagent/
 
 # sudo mkdir -p /usr/lib/keepass2/plugins
-# sudo cp /data/$USER/Pobrane/software/KeePassPlugins/*.plgx /usr/lib/keepass2/plugins/
+# sudo cp /home/$USER/Downloads/Packages/KeePassPlugins/*.plgx /usr/lib/keepass2/plugins/
 
 
 # https://keeagent.readthedocs.io/en/stable/installation.html#ubuntu

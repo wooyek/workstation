@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "----> Node.js + npm + nvm"
+evho "https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script"
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 

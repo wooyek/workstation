@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# https://facebook.github.io/watchman/
 VERSION="v2022.01.24.00"
 
 wget https://github.com/facebook/watchman/releases/download/${VERSION}/watchman-${VERSION}-linux.zip
