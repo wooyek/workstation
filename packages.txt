@@ -26,6 +26,7 @@ gdal-bin
 gdal-bin
 gdebi-core
 gettext
+gh
 git
 git-flow
 gnupg-agent

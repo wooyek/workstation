@@ -1,0 +1,13 @@
+asdf
+starship
+helmfile
+pyenv
+structurizr-cli
+watchman
+helm
+nvm
+aws-vault
+obsidian
+eksctl
+--cask lm-studio
+derailed/k9s/k9s
