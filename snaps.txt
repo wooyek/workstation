@@ -1,8 +1,0 @@
-slack
-pycharm-proffesional
-webstorm  --classic
-obsidian --classic
-datagrip --classic
-pinta
-sublime-text
-redis-insight
