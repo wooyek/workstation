@@ -1,0 +1,40 @@
+{
+  "skill": "Dev10x:gh-review-setup",
+  "repo": "wooyek/workstation",
+  "default_branch": "master",
+  "discovery": {
+    "domains": ["shell", "docs"],
+    "reviewer_roster": ["reviewer-infra", "reviewer-docs", "reviewer-generic"],
+    "existing_structure": false,
+    "tracker": "github",
+    "review_key_present": true,
+    "second_key_present": false,
+    "slack_webhook_present": false
+  },
+  "modules": ["code-review", "lessons-learned"],
+  "modules_declined": ["pr-hygiene", "adr-distillation", "second-opinion", "interactive"],
+  "strategies": {
+    "depth": "routed",
+    "model_classify": "haiku",
+    "model_capable": "sonnet",
+    "action_ref": "anthropics/claude-code-action@v1",
+    "hygiene_key_secret": null,
+    "lessons_dest": "draft_pr",
+    "notify_slack": false
+  },
+  "friction": [
+    "AskUserQuestion enforces a 4-option max; the 5-module menu had to drop Second-opinion (unavailable: no 2nd key) to fit. Worth noting upstream as a module-menu sizing constraint.",
+    "Interactive (@claude) excluded per explicit user instruction earlier in the session, not via the gate.",
+    "detect_base_branch MCP tool returned a pydantic output-validation error but the payload still carried base_branch=master; usable but noisy."
+  ],
+  "files_written": [
+    ".github/workflows/claude-code-review.yml",
+    ".github/workflows/claude-memory-review.yml",
+    ".claude/rules/INDEX.md",
+    ".claude/agents/reviewer-infra.md",
+    ".claude/agents/reviewer-docs.md",
+    ".claude/agents/reviewer-generic.md",
+    "references/rules/review-guidelines.md",
+    "references/rules/review-checks-common.md"
+  ]
+}
