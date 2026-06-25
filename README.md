@@ -7,8 +7,30 @@ Scripts for partially unattended setup of my Linux workstation
 These scripts help me get a new OS to install ready for work quickly:
 
 	curl -L https://raw.githubusercontent.com/wooyek/workstation/master/get.sh | bash
-    
-I currently with Kubuntu.
+
+I currently run Kubuntu.
+
+## Layout
+
+`bootstrap.sh` runs the numbered steps in order; each step is
+idempotent and safe to re-run:
+
+| Step | Purpose | Source |
+|------|---------|--------|
+| `00-base.sh` | dirs, apt update/upgrade, ssh | — |
+| `10-apt.sh` | apt packages | `lists/apt.txt` |
+| `15-debs.sh` | local `.deb`s | `~/Downloads/Packages` |
+| `20-repos/*.sh` | repo-gated installers (docker, gh, …) | — |
+| `30-snap.sh` | snaps | `lists/snap.txt` |
+| `40-brew.sh` | Homebrew + formulae | `lists/brew.txt` |
+| `50-python.sh` | pipx apps | `lists/pipx.txt` |
+| `55-vendor.sh` | self-managing installers (rustup, uv, starship, zoxide, tx, pyenv) | `steps/55-vendor/` |
+| `57-cargo.sh` | cargo crates | `lists/cargo.txt` |
+| `60-shell.sh` | fish + oh-my-fish | `fish_setup.fish` |
+| `70-desktop.sh` | fonts, theme, locales | — |
+
+`components/` keeps reference scripts (`archive/`, `experimental/`,
+`optional/`) that are **not** auto-run.
 
 ## No splash screen on boot
 

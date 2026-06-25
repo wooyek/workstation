@@ -1,0 +1,3 @@
+# Cargo crates to install, one per line.
+# Curated — add crates as you adopt them. Blank lines and #comments
+# are skipped by components/rust.sh.
