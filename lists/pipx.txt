@@ -14,9 +14,11 @@ pipenv
 poetry
 tox
 transifex-client
+terminaltexteffects
 vex
 twine
 watchdog[watchmedo]
 tabulate
 pre-commit
 mypy
+bump-my-version

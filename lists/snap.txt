@@ -1,5 +1,4 @@
 code
-helm
 slack
 pycharm-professional --classic
 webstorm --classic

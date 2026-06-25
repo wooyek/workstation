@@ -1,0 +1,30 @@
+--cask beyond-compare
+--cask lm-studio
+--cask obsidian
+age
+asdf
+aws-vault
+chezmoi
+doctl
+eksctl
+eza
+fnm
+gcloud-cli
+googleworkspace-cli
+helm
+helmfile
+k9s
+jq
+lazygit
+lazydocker
+lazyjournal
+nvm
+overmind
+pyenv
+pnpm
+railway
+starship
+structurizr-cli
+watchman
+uv
+yq
