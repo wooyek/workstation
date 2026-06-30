@@ -23,8 +23,11 @@ overmind
 pyenv
 pnpm
 railway
+sentry-cli
 starship
 structurizr-cli
+supabase/tap/supabase
+vercel-cli
 watchman
 uv
 yq
