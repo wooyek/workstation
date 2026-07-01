@@ -58,6 +58,7 @@ boxes
 asciinema
 speedtest-cli
 oath-toolkit
+aws-vault
 pcsclite
 
 # --- spell / docs ---
