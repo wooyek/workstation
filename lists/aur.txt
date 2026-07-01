@@ -1,0 +1,9 @@
+# AUR packages for Arch / Omarchy, installed via yay (pre-installed on
+# Omarchy). One per line; blank lines and #comments are skipped.
+#
+# Curated — uncomment / add AUR-only tools as you adopt them. Kept empty
+# by default so the step is a safe no-op on a fresh machine.
+
+# git-flow-avh
+# google-cloud-cli
+# beyond-compare

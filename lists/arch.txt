@@ -1,0 +1,83 @@
+# Pacman packages for Arch / Omarchy.
+#
+# Curated core set, mapped from lists/apt.txt. This is the bootstrap
+# baseline — CLIs, build tooling, and libraries other steps assume.
+# Blank lines and #comments are skipped.
+#
+# Intentionally deferred (see README "Omarchy / Arch support"):
+#   - KDE-specific apps (ark, krename, krusader, ksnip, kwallet, …) —
+#     Omarchy runs Hyprland, not Plasma.
+#   - Exhaustive -dev library parity — on Arch, headers ship with the
+#     main package, so most apt lib*-dev entries have no separate pkg.
+#   - AUR-only tools live in lists/aur.txt.
+
+# --- base build / dev ---
+base-devel
+gcc
+make
+llvm
+binutils
+gettext
+pkgconf
+
+# --- languages / runtimes ---
+python
+python-pip
+python-pipx
+jdk-openjdk
+
+# --- core CLIs ---
+git
+git-delta
+curl
+wget
+vim
+nano
+fish
+htop
+btop
+bat
+ripgrep
+fd
+fzf
+jq
+yq
+tree
+lsd
+unzip
+xz
+pv
+moreutils
+net-tools
+openssh
+gnupg
+pandoc
+graphviz
+figlet
+boxes
+asciinema
+speedtest-cli
+oath-toolkit
+pcsclite
+
+# --- spell / docs ---
+aspell
+aspell-pl
+
+# --- libraries commonly needed to build native/python wheels ---
+openssl
+libffi
+readline
+sqlite
+zlib
+bzip2
+postgresql-libs
+libmemcached
+
+# --- media / misc (optional — comment out if unwanted) ---
+vlc
+obs-studio
+inkscape
+krita
+calibre
+samba

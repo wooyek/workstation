@@ -2,3 +2,4 @@
 *.zip
 watchman-*/
 .claude/settings.local.*
+.claude/Dev10x/
