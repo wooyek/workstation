@@ -2,3 +2,5 @@
 *.zip
 watchman-*/
 .claude/settings.local.*
+.claude/Dev10x/*
+!.claude/Dev10x/gh-review-setup/
