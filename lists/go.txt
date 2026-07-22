@@ -1,0 +1,10 @@
+# Go module paths installed with `go install` (see steps/56-go.sh).
+# One module path per line, version suffix included (e.g. @latest).
+# Blank lines and #comments are skipped.
+#
+# `go install` builds each binary into ~/go/bin ($GOPATH/bin) and 56-go.sh
+# puts that dir on PATH. The command name is the last path element before
+# the @version — e.g. .../cmd/frisco@latest installs the `frisco` command.
+
+# Frisco.pl grocery CLI + MCP server — https://github.com/rrudol/frisco
+github.com/rrudol/frisco/cmd/frisco@latest
