@@ -25,12 +25,20 @@ idempotent and safe to re-run:
 | `40-brew.sh` | Homebrew + formulae | `lists/brew.txt` |
 | `50-python.sh` | pipx apps | `lists/pipx.txt` |
 | `55-vendor.sh` | self-managing installers (rustup, uv, starship, zoxide, tx, pyenv) | `steps/55-vendor/` |
+| `56-go.sh` | go CLIs | `lists/go.txt` |
 | `57-cargo.sh` | cargo crates | `lists/cargo.txt` |
+| `58-uv.sh` | uv-managed CLI tools | `lists/uv.txt` |
 | `60-shell.sh` | fish + oh-my-fish | `fish_setup.fish` |
 | `70-desktop.sh` | fonts, theme, locales | — |
 
 `components/` keeps reference scripts (`archive/`, `experimental/`,
 `optional/`) that are **not** auto-run.
+
+## Migration
+
+`migrate/backup.sh` stages configs, credentials and shell history onto
+a surviving disk before an OS reinstall; `migrate/restore.sh` brings
+them back after bootstrap. Full procedure: [docs/MIGRATION.md](docs/MIGRATION.md).
 
 ## No splash screen on boot
 
