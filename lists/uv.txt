@@ -1,0 +1,5 @@
+auto-editor
+bump-my-version
+playwright
+ruff
+yt-dlp

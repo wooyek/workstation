@@ -5,6 +5,7 @@ age
 asdf
 aws-vault
 chezmoi
+codex
 doctl
 eksctl
 eza

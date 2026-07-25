@@ -8,3 +8,5 @@ pinta
 sublime-text --classic
 redis-insight
 redisinsight
+rambox
+youtube-music-desktop-app
