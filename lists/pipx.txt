@@ -1,7 +1,6 @@
 asciinema
 autoflake
 black
-bump2version
 cookiecutter
 check-manifest
 flake8
@@ -12,6 +11,7 @@ pew
 pip-tools
 pipenv
 poetry
+pyupgrade
 tox
 transifex-client
 terminaltexteffects
@@ -21,4 +21,3 @@ watchdog[watchmedo]
 tabulate
 pre-commit
 mypy
-bump-my-version
