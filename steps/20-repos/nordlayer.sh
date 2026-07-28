@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "----> NordLayer VPN"
+echo "----> https://nordlayer.com/download/linux/"
 
 # NordLayer publishes a release .deb that installs the repo + key.
 TMP_DEB="$(mktemp --suffix=.deb)"

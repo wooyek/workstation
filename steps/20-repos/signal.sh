@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "----> Signal Desktop"
+echo "----> https://signal.org/download/linux/"
 
 # Signal officially ships only the xenial suite — it works on all Ubuntu releases.
 curl -fsSL https://updates.signal.org/desktop/apt/keys.asc | sudo gpg --dearmor -o /usr/share/keyrings/signal-desktop-keyring.gpg
