@@ -44,15 +44,19 @@ Then verify:
 
 ## Phase 3 — Fresh install
 
-1. Install Kubuntu on the new disk (EFI + `/` + `/home`, or a single
-   `/` — your choice).
+1. Install Kubuntu on the new disk. Prefer manual partitioning with
+   `/home` as a **separate partition** — it survives future reinstalls
+   and can later be moved to its own disk with one rsync + one fstab
+   line. With plenty of RAM, skip swap: remove the installer-created
+   `/swapfile` and its fstab entry after the first boot.
 2. First boot: verify network. If the NIC needs an out-of-tree driver
    (e.g. Realtek r8125 DKMS), the source tree is in the backup under
    `home/realtek-r8125-dkms`.
 3. Re-add data-disk mounts to `/etc/fstab` **by UUID and with
    `nofail`** — never by `/dev/nvmeXnY` path, and never without
    `nofail`: NVMe enumeration order is not stable, and a missing disk
-   must not hang boot.
+   must not hang boot. For NTFS disks use the in-kernel `ntfs3`
+   fstype instead of the ntfs-3g FUSE driver.
 
 ## Phase 4 — Bootstrap + restore
 
@@ -62,6 +66,17 @@ curl -L https://raw.githubusercontent.com/wooyek/workstation/master/get.sh | bas
 
 # 2. Restore configs and credentials:
 migrate/restore.sh /work/migration/<host>-<date>
+```
+
+**Before starting Docker for the first time:** if the old system kept
+Docker's `data-root` on the surviving disk (check `etc/docker/daemon.json`
+in the backup), restore that file first — otherwise the fresh Docker
+initializes an empty `/var/lib/docker` and all images/volumes on the
+data disk look "gone" until the config is pointed back at them:
+
+```bash
+sudo cp <backup>/etc/docker/daemon.json /etc/docker/daemon.json
+sudo systemctl restart docker
 ```
 
 ## Phase 5 — Re-authentication & verification
@@ -83,6 +98,12 @@ grant the backup copies long-term shelf life.
 
 - The backup is incremental — re-run `backup.sh` right before the
   final shutdown to catch last-minute changes.
+- LLM model stores are cache, not settings — keep them on the
+  surviving data disk, outside the backup, so they need neither
+  copying nor re-downloading: `set -Ux OLLAMA_MODELS /work/ai/ollama`
+  (fish universal vars transfer via `fish_variables`), optionally
+  `HF_HOME=/work/ai/huggingface`, and LM Studio → Settings → Models
+  directory.
 - JetBrains IDEs restore their settings but **not** their plugins —
   those re-download from the marketplace. Work through
   `manifests/jetbrains-plugins.txt` to re-add them per IDE.
