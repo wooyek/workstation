@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo "----> Visual Studio Code"
-echo "https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux"
+echo "----> https://code.visualstudio.com/docs/setup/linux#_install-vs-code-on-linux"
 
 
 sudo apt-get install wget gpg
