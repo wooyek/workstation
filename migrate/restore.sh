@@ -35,6 +35,8 @@ echo "  $SRC/etc/apt/sources.list.d/   -> re-add third-party repos you still use
 echo "  $SRC/etc/NetworkManager/       -> sudo copy Wi-Fi/VPN profiles you need"
 echo "  $SRC/etc/hosts                 -> merge custom host entries"
 echo "  $SRC/etc/default/grub          -> re-apply GRUB_CMDLINE tweaks + update-grub"
+echo "  $SRC/etc/docker/daemon.json    -> restore BEFORE first docker start when"
+echo "                                    data-root lives on a surviving disk"
 
 # ---------------------------------------------------------------------------
 # 3. Data-disk mounts: generate CLEAN fstab lines from live UUIDs.
@@ -52,7 +54,8 @@ lsblk -rno NAME,FSTYPE,UUID,MOUNTPOINT | awk '$2=="ext4" && $4=="" && $3!="" {
     printf "  UUID=%s  /mnt/%s  ext4  defaults,nofail  0 2\n", $3, $1
 }'
 echo "  Use 'nofail' on every non-root data disk so a missing disk can"
-echo "  never hang boot again."
+echo "  never hang boot again. For NTFS disks use fstype 'ntfs3'"
+echo "  (in-kernel driver) instead of ntfs/ntfs-3g."
 
 # ---------------------------------------------------------------------------
 # 4. Re-authentication checklist — things a file copy cannot preserve.
