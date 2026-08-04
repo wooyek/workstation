@@ -1,8 +1,5 @@
---cask beyond-compare
 --cask lm-studio
---cask obsidian
 age
-asdf
 aws-vault
 chezmoi
 codex
@@ -12,6 +9,7 @@ eza
 fnm
 gcloud-cli
 googleworkspace-cli
+openclaw/tap/gogcli
 helm
 helmfile
 k9s
@@ -28,7 +26,8 @@ sentry-cli
 starship
 structurizr-cli
 supabase/tap/supabase
-vercel-cli
+vercel
 watchman
 uv
+worktrunk
 yq
