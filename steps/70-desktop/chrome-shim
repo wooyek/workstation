@@ -1,0 +1,11 @@
+#!/bin/bash
+# Managed by workstation/steps/70-desktop/chrome-fontconfig.sh — installed
+# over /opt/google/chrome/chrome via dpkg-divert; the real binary is
+# chrome.distrib. Chrome 154 statically links a newer fontconfig whose
+# cache files crash the system library Plasma uses, so it must not share
+# ~/.cache/fontconfig.
+fonts_conf="$HOME/.config/fontconfig-chrome/fonts.conf"
+if [ -r "$fonts_conf" ]; then
+    export FONTCONFIG_FILE="$fonts_conf"
+fi
+exec -a "$0" /opt/google/chrome/chrome.distrib "$@"
