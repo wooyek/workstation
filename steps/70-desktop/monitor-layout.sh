@@ -1,0 +1,79 @@
+#!/usr/bin/env bash
+
+# Three monitors on a row, panel on the middle one, and the row must not
+# reshuffle when a monitor drops off DisplayPort (power button, monitor
+# sleep, cable). KWin (Plasma 6, Wayland) remembers one setup per
+# combination of connected outputs in ~/.config/kwinoutputconfig.json and
+# lays out an unseen combination from scratch, so a two-monitor setup it
+# invented once puts the right monitor on the left and moves the panel.
+#
+# Plasma places the panel on screen 0, which is always the primary
+# (priority 1) output. Making the middle monitor primary in every setup
+# keeps the panel there whenever that monitor is on.
+#
+# kscreen-doctor only edits the setup that is live right now. The other
+# combinations are rewritten in the JSON file (see monitor-layout.jq).
+# KWin reads that file once at login and overwrites it from memory on any
+# later change, so the rewrite applies after a relogin and must not be
+# followed by display changes before then.
+
+set -euo pipefail
+
+# Left to right, logical width per monitor at scale 1.45 (3840 / 1.45).
+monitor_order=(DP-2 DP-3 DP-1)
+monitor_primary=(DP-3 DP-2 DP-1)
+monitor_width=2649
+
+echo "----> Pinning the monitor row and the primary screen"
+
+# kscreen-doctor exits non-zero outside a Wayland session; an empty list
+# just skips the live part below.
+connected="$(kscreen-doctor -o 2>/dev/null | sed -n 's/^.*Output: .*[0-9] \(DP-[0-9]\+\|HDMI-[A-Z0-9-]\+\).*$/\1/p' || true)"
+
+live_settings=()
+column=0
+for name in "${monitor_order[@]}"; do
+    if grep -qx "$name" <<<"$connected"; then
+        live_settings+=("output.$name.position.$((column * monitor_width)),0")
+        column=$((column + 1))
+    fi
+done
+rank=1
+for name in "${monitor_primary[@]}"; do
+    if grep -qx "$name" <<<"$connected"; then
+        live_settings+=("output.$name.priority.$rank")
+        rank=$((rank + 1))
+    fi
+done
+
+if [ "${#live_settings[@]}" -gt 0 ]; then
+    kscreen-doctor "${live_settings[@]}"
+    echo "     live setup applied: ${live_settings[*]}"
+else
+    echo "     no Wayland session — skipping the live setup"
+fi
+
+config="$HOME/.config/kwinoutputconfig.json"
+if [ -f "$config" ]; then
+    rewritten="$(mktemp)"
+    jq --argjson order "$(printf '%s\n' "${monitor_order[@]}" | jq -R . | jq -s .)" \
+       --argjson primary "$(printf '%s\n' "${monitor_primary[@]}" | jq -R . | jq -s .)" \
+       --argjson width "$monitor_width" \
+       -f "$(dirname "$0")/monitor-layout.jq" "$config" >"$rewritten"
+    mv "$rewritten" "$config"
+    echo "     remembered setups rewritten — relogin before changing displays"
+else
+    echo "     $config missing — KWin writes it on first login"
+fi
+
+# Blank the screens after an hour idle on AC. Keys from
+# powerdevilprofilesettings.kcfg, group [AC][Display]. The locked-screen
+# timeout keeps its default so a locked desk still blanks quickly.
+echo "----> Turning the displays off after an hour idle"
+kwriteconfig6 --file powerdevilrc --group AC --group Display --key TurnOffDisplayWhenIdle true
+kwriteconfig6 --file powerdevilrc --group AC --group Display --key TurnOffDisplayIdleTimeoutSec 3600
+if qdbus6 org.kde.Solid.PowerManagement /org/kde/Solid/PowerManagement refreshStatus 2>/dev/null; then
+    echo "     power management reloaded"
+else
+    echo "     powerdevil not running — applies on next login"
+fi
