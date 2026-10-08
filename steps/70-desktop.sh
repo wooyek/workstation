@@ -88,3 +88,4 @@ fi
 
 bash "$(dirname "$0")/70-desktop/ksnip-shortcuts.sh"
 bash "$(dirname "$0")/70-desktop/chrome-fontconfig.sh"
+bash "$(dirname "$0")/70-desktop/huion-tablet-gromit.sh"
