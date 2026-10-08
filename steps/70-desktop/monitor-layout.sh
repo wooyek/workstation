@@ -11,11 +11,20 @@
 # (priority 1) output. Making the middle monitor primary in every setup
 # keeps the panel there whenever that monitor is on.
 #
+# Adaptive Sync stays off. With it on "automatic" KWin switches VRR on
+# for any fullscreen surface — Spectacle's region-selection overlay,
+# Gromit's annotation layer — and the AOC U32P2 drops the picture for a
+# second while DisplayPort re-trains, then again when the surface closes.
+# Nothing is logged by KWin or the kernel; reproduced and fixed live
+# 2026-10-08 by setting vrrpolicy to never.
+#
 # kscreen-doctor only edits the setup that is live right now. The other
 # combinations are rewritten in the JSON file (see monitor-layout.jq).
 # KWin reads that file once at login and overwrites it from memory on any
 # later change, so the rewrite applies after a relogin and must not be
-# followed by display changes before then.
+# followed by display changes before then. KWin's own write after the
+# kscreen-doctor call above is asynchronous and landed on top of the
+# rewrite once, so the rewrite waits for it.
 
 set -euo pipefail
 
@@ -35,6 +44,7 @@ column=0
 for name in "${monitor_order[@]}"; do
     if grep -qx "$name" <<<"$connected"; then
         live_settings+=("output.$name.position.$((column * monitor_width)),0")
+        live_settings+=("output.$name.vrrpolicy.never")
         column=$((column + 1))
     fi
 done
@@ -49,6 +59,7 @@ done
 if [ "${#live_settings[@]}" -gt 0 ]; then
     kscreen-doctor "${live_settings[@]}"
     echo "     live setup applied: ${live_settings[*]}"
+    sleep 3
 else
     echo "     no Wayland session — skipping the live setup"
 fi
