@@ -1,8 +1,13 @@
 # Rewrites every remembered monitor setup in kwinoutputconfig.json so the
 # physical order and the primary screen never depend on which monitors
-# happen to be connected. Arguments: $order (left-to-right connectors),
-# $primary (connectors in primary-first order), $width (logical px).
+# happen to be connected, and keeps Adaptive Sync off on the known
+# monitors. Arguments: $order (left-to-right connectors), $primary
+# (connectors in primary-first order), $width (logical px).
 (.[] | select(.name == "outputs") | .data | map(.connectorName)) as $names
+| (.[] | select(.name == "outputs")).data |= map(
+    .connectorName as $name
+    | if ($order | index($name)) then .vrrPolicy = "Never" else . end
+)
 | (.[] | select(.name == "setups")).data |= map(
     .outputs as $outputs
     | ($outputs | map($names[.outputIndex])) as $present
