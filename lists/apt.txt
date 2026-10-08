@@ -42,6 +42,7 @@ gnupg-agent
 golang-go
 gparted
 graphviz
+gromit-mpx
 handbrake
 handbrake-cli
 htop
