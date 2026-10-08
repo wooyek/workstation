@@ -27,3 +27,31 @@ while read -r package || [ -n "$package" ]; do
     esac
     brew install $package
 done <lists/brew.txt
+
+# Brew's fontconfig (a cairo/harfbuzz/openjdk dependency) is newer than the
+# system's and writes cache-12 files, the format whose cache-9 symlinks
+# made plasmashell segfault in FcCharSetHasChar (see
+# 70-desktop/chrome-fontconfig.sh — Chrome was the writer that did it).
+# Brew is kept off the shared cachedirs too, defensively. Re-applied every
+# run because a fontconfig upgrade may restore the stock fonts.conf.
+brew_fonts_conf="$(brew --prefix)/etc/fonts/fonts.conf"
+if [ -f "$brew_fonts_conf" ]; then
+    echo "----> Isolating brew fontconfig cache in ~/.cache/fontconfig-brew"
+    sed -i \
+        -e 's|<cachedir prefix="xdg">fontconfig</cachedir>|<cachedir prefix="xdg">fontconfig-brew</cachedir>|' \
+        -e '\|<cachedir>~/.fontconfig</cachedir>|d' \
+        "$brew_fonts_conf"
+fi
+
+# Brew's bin precedes /usr/bin on PATH, so pin the interactive fc-* tools
+# to the system copies — they then read the cache Plasma reads.
+echo "----> Pinning fc-* in fish to the system fontconfig"
+mkdir -p ~/.config/fish/functions
+for tool in fc-cache fc-list fc-match fc-query fc-scan fc-pattern; do
+    tee ~/.config/fish/functions/$tool.fish > /dev/null <<FISH
+# Managed by workstation/steps/40-brew.sh — edit there, not here.
+function $tool --wraps /usr/bin/$tool --description 'system $tool, not Homebrew'
+    /usr/bin/$tool \$argv
+end
+FISH
+done
